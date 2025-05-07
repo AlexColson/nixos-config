@@ -1,12 +1,10 @@
 { pkgs, username, ... }:
 {
   imports = [
-    # ./1password
-    # ./firefox
     #./jetbrains
     # ./libreoffice
-    # ./obsidian
-    #./vscode
+    ./obsidian
+    ./vscode
   ];
   home-manager.users.${username} = {
     programs.chromium = {
@@ -19,7 +17,7 @@
       #remmina
       #openvpn
       #vivaldi
-      vscode
+      # vscode
     ];
 
     programs.zathura = {

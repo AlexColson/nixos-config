@@ -3,7 +3,8 @@
   imports = [ stylix.nixosModules.stylix ];
   stylix = {
     enable = true;
-    image = ../../assets/backgrounds/aperture-orange-blue.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+    # image = ../../assets/backgrounds/aperture-orange-blue.jpg;
     polarity = "dark";
 
     fonts = {

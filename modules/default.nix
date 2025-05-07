@@ -8,6 +8,7 @@
     ./${DE}
     ./hyprland
     ./stylix
+    ./virt
     #    ./tailscale
   ];
 }
