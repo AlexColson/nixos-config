@@ -58,5 +58,6 @@
     cmake
     gcc14
     clang_19
+    linuxKernel.kernels.linux_zen
   ];
 }

@@ -2,6 +2,6 @@
   imports = [
     ./gnupg
     ./polkit
-    ./yubico
+    #./yubico
   ];
 }
