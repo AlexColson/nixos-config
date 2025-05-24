@@ -1,10 +1,9 @@
 {
   imports = [
-    ./boot/systemd
+    ./boot
     ./nix
     ./security
     ./terminal
     ./cache
   ];
-
 }

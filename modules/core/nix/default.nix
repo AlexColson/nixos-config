@@ -47,6 +47,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    linuxKernel.kernels.linux_zen
     vim
     neovim
     tmux
@@ -58,6 +59,5 @@
     cmake
     gcc14
     clang_19
-    linuxKernel.kernels.linux_zen
   ];
 }
