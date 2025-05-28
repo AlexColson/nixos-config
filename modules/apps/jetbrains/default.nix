@@ -4,5 +4,6 @@
     jetbrains.goland
     jetbrains.rust-rover
     jetbrains.pycharm-community
+    jetbrains.clion
   ];
 }

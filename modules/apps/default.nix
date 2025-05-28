@@ -1,10 +1,11 @@
 { pkgs, username, ... }:
 {
   imports = [
-    #./jetbrains
+    ./jetbrains
     # ./libreoffice
     ./obsidian
     ./vscode
+    ./gaming
   ];
   home-manager.users.${username} = {
     programs.chromium = {
@@ -12,6 +13,10 @@
       package = pkgs.brave;
     };
     home.packages = with pkgs; [
+      discord
+      dropbox
+      keepassxc
+      #variety # wallpaper manager
       #microsoft-edge
       #ticktick
       #remmina

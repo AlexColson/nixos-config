@@ -10,6 +10,7 @@
     ./tmux
     ./yazi
     ./zsh
+    ./fish
   ];
 
   # ---- Home Configuration ----
@@ -34,7 +35,7 @@
     pavucontrol
     playerctl
     ripgrep
-    todoist
+    #todoist
     unzip
     vhs
     zoxide

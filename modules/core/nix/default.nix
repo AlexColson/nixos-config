@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ pkgs, lib, username, ... }:
 {
   imports = [ ./nh ];
 
@@ -46,6 +46,49 @@
     nix-direnv.enable = true;
   };
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      userServices = true;
+    };
+  };
+
+  services.printing = {
+    enable = true;
+    listenAddresses = [ "*:631" ];
+    allowFrom = [ "all" ];
+    browsing = true;
+    defaultShared = true;
+    openFirewall = true;
+  };
+
+  hardware = 
+    let 
+      brother = "Brother_MFC-L2710DW";
+      hostName = "192.168.0.224";
+    in 
+    {
+      printers = {
+        ensureDefaultPrinter = brother;
+        ensurePrinters = [
+        {
+          name = brother;
+          deviceUri = "ipp://${hostName}/ipp";
+          model = "everywhere";
+          description = lib.replaceStrings [ "_" ] [ " " ] brother;
+          location = "Study";
+        }
+      ];  
+      };
+      sane.enable= true;
+    };
+  
+
+
+
   environment.systemPackages = with pkgs; [
     linuxKernel.kernels.linux_zen
     vim
@@ -59,5 +102,6 @@
     cmake
     gcc14
     clang_19
+    hplipWithPlugin
   ];
 }
