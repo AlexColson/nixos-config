@@ -6,7 +6,7 @@
     ./core
     ./hardware
     ./${DE}
-    ./hyprland
+    #./hyprland
     ./stylix
     ./virt
     #    ./tailscale
