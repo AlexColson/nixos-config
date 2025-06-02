@@ -90,7 +90,6 @@
 
 
   environment.systemPackages = with pkgs; [
-    linuxKernel.kernels.linux_zen
     vim
     neovim
     tmux

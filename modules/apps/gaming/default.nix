@@ -17,5 +17,6 @@
         heroic
         bottles
         vulkan-tools
+        chiaki-ng
     ];
 }
