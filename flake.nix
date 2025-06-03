@@ -3,17 +3,22 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-
+    
+    # when using a stable version of nixos, we need to use a matching version
+    # of stylix. Following nixpkgs isn't enough
+    stylix.url = "github:nix-community/stylix/release-25.05";
+    
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.darwin.follows = "";
-    };
+
+    # agenix = {
+    #   url = "github:ryantm/agenix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.darwin.follows = "";
+    # };
 
     # hyprland = {
     #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -34,10 +39,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -51,20 +52,20 @@
 
       nixosConfigurations = {
 
-        live-image =
-          let
-            system = "x86_64-linux";
-          in
-          nixpkgs.lib.nixosSystem {
-            inherit system;
-            specialArgs = {
-              username = "nixos";
-              hostName = "live-image";
-              hyprlandConfig = "laptop";
-              inherit system;
-            } // attrs;
-            modules = [ ./minimal.nix ];
-          }; # live-image
+        # live-image =
+        #   let
+        #     system = "x86_64-linux";
+        #   in
+        #   nixpkgs.lib.nixosSystem {
+        #     inherit system;
+        #     specialArgs = {
+        #       username = "nixos";
+        #       hostName = "live-image";
+        #       hyprlandConfig = "laptop";
+        #       inherit system;
+        #     } // attrs;
+        #     modules = [ ./minimal.nix ];
+        #   }; # live-image
 
 # Appended new system
 	bigrawr =
