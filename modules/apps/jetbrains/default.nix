@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    jetbrains.goland
+    #jetbrains.goland
     jetbrains.rust-rover
     jetbrains.pycharm-community
     jetbrains.clion
