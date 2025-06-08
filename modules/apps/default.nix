@@ -7,6 +7,9 @@
     ./vscode
     ./gaming
   ];
+  environment.systemPackages = with pkgs; [
+    spotify
+  ];
   home-manager.users.${username} = {
     programs.chromium = {
       enable = true;
@@ -28,5 +31,6 @@
     programs.zathura = {
       enable = true;
     };
+
   };
 }
