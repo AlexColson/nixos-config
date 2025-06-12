@@ -85,10 +85,21 @@
       };
       sane.enable= true;
     };
+
+  system.autoUpgrade = {
+      enable = true;
+      dates = "daily";
+      flake = "/home/${username}/dev/nixos/nixos-config";
+      flags = [
+          "--update-input" "nixpkgs"
+      ];
+      allowReboot = true;
+      rebootWindow = {
+        lower = "01:00";
+        upper = "05:00";
+      };
+  };
   
-
-
-
   environment.systemPackages = with pkgs; [
     vim
     neovim
