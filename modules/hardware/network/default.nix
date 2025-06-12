@@ -3,6 +3,7 @@
   networking = {
     networkmanager = {
       enable = true;
+      wifi.backend = "iwd";
     };
     inherit hostName;
   };
